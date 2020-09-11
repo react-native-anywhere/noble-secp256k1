@@ -1,5 +1,5 @@
 import * as fc from 'fast-check';
-import * as secp from '..';
+import * as secp from '../src';
 import { readFileSync } from 'fs';
 import * as sysPath from 'path';
 import * as ecdsa from './vectors/ecdsa.json';
