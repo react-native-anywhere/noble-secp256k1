@@ -4,7 +4,8 @@
   "description": "Noble secp256k1. Very fast, high-security, auditable, 0-dep, 1-file pubkey & ECDSA.",
   "main": "dist",
   "scripts": {
-    "build": "tsc -d",
+    "prefix": "node ./scripts/prefix.js",
+    "build": "tsc -d ; npm run-script prefix ; babel dist --out-dir dist",
     "lint": "prettier --print-width 100 --single-quote --check index.ts",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -24,6 +25,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
     "@types/jest": "^25.2.1",
     "@types/node": "^12.12.36",
     "babel-plugin-transform-bigint": "^1.0.7",
